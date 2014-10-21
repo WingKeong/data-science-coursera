@@ -4,6 +4,11 @@ datasciencecoursera
 #Repo created for Data Scienctist's Toolkit project
 
 ##Codebook for Tidy dataset.txt
+test
+>selvar<-selvar[,desc:=V2]
+>selvar$desc<-gsub('^t', 'time', selvar$desc) #Expand abbreviations - t to time
+>selvar$desc<-gsub('^f', 'frequency', selvar$desc) #Expand abbreviations - f to frequency
+
 
 | Variable Name | Description |
 | --- | --- |
