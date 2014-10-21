@@ -10,7 +10,7 @@ datasciencecoursera
 | --- | --- |
 | a | b |
 | c | d the quick brown fox 1.  jumps over the lazy dog
-2. and died the quick brown fox jumps over the lazy dog and died the quick brown fox jumps over the lazy dog and died the quick brown fox jumps over the lazy dog and died |
+| |2. and died the quick brown fox jumps over the lazy dog and died the quick brown fox jumps over the lazy dog and died the quick brown fox jumps over the lazy dog and died |
  e
  f
 g |
