@@ -6,8 +6,8 @@ datasciencecoursera
 1. list1
 2. list2
 
-| test |: col |
-| --- | --- |
+| test | col |
+| --- |: --- |
 | a | b |
 | c | d the quick brown fox 1.  jumps over the lazy dog
 | |2. and died the quick brown fox jumps over the lazy dog
