@@ -8,9 +8,7 @@ datasciencecoursera
 | Variable Name | Description |
 | --- | --- |
 | subject | Identification number of the subject who performed the activity |
-| activity | Activity performed by the subject. The activity labels are listed below. The activity codes from the original dataset are not included in the tidy dataset file but are indicated 
-
-against each label for reference <ul><li> WALKING - 1</li><li> WALKING UPSTAIRS - 2</li><li> WALKING DOWNSTAIRS - 3</li><li> SITTING - 4</li><li> STANDING - 5</li><li> LAYING - 6</li></ul>|
+| activity | Activity performed by the subject. The activity labels are listed below. The activity codes from the original dataset are not included in the tidy dataset file but are indicated against each label for reference <ul><li> WALKING - 1</li><li> WALKING UPSTAIRS - 2</li><li> WALKING DOWNSTAIRS - 3</li><li> SITTING - 4</li><li> STANDING - 5</li><li> LAYING - 6</li></ul>|
 | timebodyaccelerationmeanx | Average mean value (in Hertz) of the body acceleration signal, from the time domain, in direction X, for the subject & activity |
 | timebodyaccelerationmeany | Average mean value (in Hertz) of the body acceleration signal, from the time domain, in direction Y, for the subject & activity |
 | timebodyaccelerationmeanz | Average mean value (in Hertz) of the body acceleration signal, from the time domain, in direction Z, for the subject & activity |
