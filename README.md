@@ -9,3 +9,6 @@ datasciencecoursera
 | --- | --- |
 | subject | Identification number of the subject who performed the activity |
 | activity | Activity performed by the subject whlist
+
+
+| cc | ss|
