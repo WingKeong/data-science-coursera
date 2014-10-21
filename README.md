@@ -8,10 +8,5 @@ datasciencecoursera
 | Variable Name | Description |
 | --- | --- |
 | subject | Identification number of the subject who performed the activity |
-| activity | Activity performed by the subject whlist<dl>
-  <dt>Definition list</dt>
-  <dd>Is something people use sometimes.</dd>
-|
-
-
+| activity | Activity performed by the subject whlist <ul><li>item1</li><li>item2</li></ul>| See the list | from the first collum|
 | cc | ss|
