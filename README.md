@@ -3,51 +3,85 @@ datasciencecoursera
 
 #Repo created for Data Scienctist's Toolkit project
 
+##Codebook for Tidy dataset.txt
+
 | Variable Name | Description |
-| --- | ---|
-| timebodyaccelerationmeanx | Average mean value of the body motion acceleration signal from the time domain in X direction recorded by the subject for the activity |
-| timebodyaccelerationmeany | Average mean value of the body motion acceleration signal from the time domain in Y direction recorded by the subject for the activity |
-| timebodyaccelerationmeanz | Average mean value of the body motion acceleration signal from the time domain in Z direction recorded by the subject for the activity |
-| timebodyaccelerationstandardeviationx | Average standard deviation of the time body motion acceleration signal in X direction recorded by the subject for the activity |
-| timebodyaccelerationstandardeviationy | Average standard deviation of the time body motion acceleration signal in Y direction recorded by the subject for the activity |
-| timebodyaccelerationstandardeviationz | Average standard deviation of the time body motion acceleration signal in Z direction recorded by the subject for the activity |
-| timegravityaccelerationmeanx | Average mean value of the time gravity acceleration signal in X direction recorded by the subject for the activity |
-| timegravityaccelerationmeany | Average mean value of the time gravity acceleration signal in Y direction recorded by the subject for the activity |
-| timegravityaccelerationmeanz | Average mean value of the time gravity acceleration signal in Z direction recorded by the subject for the activity |
-| timegravityaccelerationstandardeviationx | Average standard deviation of the time gravity acceleration signal in X direction recorded by the subject for the activity |
-| timegravityaccelerationstandardeviationy | Average standard deviation of the time gravity acceleration signal in Y direction recorded by the subject for the activity |
-| timegravityaccelerationstandardeviationz | Average standard deviation of the time gravity acceleration signal in Z direction recorded by the subject for the activity |
-| timebodyaccelerationjerkmeanx | Average mean value of the time body acceleration jerk signal in X direction recorded by the subject for the activity |
-| timebodyaccelerationjerkmeany | Average mean value of the time body acceleration jerk signal in Y direction recorded by the subject for the activity |
-| timebodyaccelerationjerkmeanz | Average mean value of the time body acceleration jerk signal in Z direction recorded by the subject for the activity |
-| timebodyaccelerationjerkstandardeviationx | Average standard deviation of the time body acceleration jerk signal in X direction recorded by the subject for the activity |
-| timebodyaccelerationjerkstandardeviationy | Average standard deviation of the time body acceleration jerk signal in Y direction recorded by the subject for the activity |
-| timebodyaccelerationjerkstandardeviationz | Average standard deviation of the time body acceleration jerk signal in Z direction recorded by the subject for the activity |
-| timebodygyroscopemeanx | Average mean value of the time body gyroscope signal in X direction recorded by the subject for the activity |
-| timebodygyroscopemeany | Average mean value of the time body gyroscope signal in Y direction recorded by the subject for the activity |
-| timebodygyroscopemeanz | Average mean value of the time body gyroscope signal in Z direction recorded by the subject for the activity |
-| timebodygyroscopestandardeviationx | Average standard deviation of the time body gyroscope signal in X direction recorded by the subject for the activity |
-| timebodygyroscopestandardeviationy | Average standard deviation of the time body gyroscope signal in Y direction recorded by the subject for the activity |
-| timebodygyroscopestandardeviationz | Average standard deviation of the time body gyroscope signal in Z direction recorded by the subject for the activity |
-| timebodygyroscopejerkmeanx | Average mean value of the time body gyroscope jerk signal in X direction recorded by the subject for the activity |
-| timebodygyroscopejerkmeany | Average mean value of the time body gyroscope jerk signal in Y direction recorded by the subject for the activity |
-| timebodygyroscopejerkmeanz | Average mean value of the time body gyroscope jerk signal in Z direction recorded by the subject for the activity |
-| timebodygyroscopejerkstandardeviationx | Average standard deviation of the time body gyroscope jerk signal in X direction recorded by the subject for the activity |
-| timebodygyroscopejerkstandardeviationy | Average standard deviation of the time body gyroscope jerk signal in Y direction recorded by the subject for the activity |
-| timebodygyroscopejerkstandardeviationz | Average standard deviation of the time body gyroscope jerk signal in Z direction recorded by the subject for the activity |
-| timebodyaccelerationmagnitutemean | Average mean value of the time body motion acceleration magnitude signal recorded by the subject for the activity |
-| timebodyaccelerationmagnitutestandardeviation | Average standard deviation of the time body motion acceleration magnitude signal recorded by the subject for the activity |
-| timegravityaccelerationmagnitutemean | Average mean value of the time gravity acceleration magnitude signal recorded by the subject for the activity |
-| timegravityaccelerationmagnitutestandardeviation | Average standard deviation of the time gravity acceleration magnitude signal recorded by the subject for the activity |
-| timebodyaccelerationjerkmagnitutemean | Average mean value of the time body acceleration jerk magnitude signal recorded by the subject for the activity |
-| timebodyaccelerationjerkmagnitutestandardeviation | Average standard deviation of the time body acceleration jerk magnitude signal recorded by the subject for the activity |
-| timebodygyroscopemagnitutemean | Average mean value of the time body gyroscope magnitude signal recorded by the subject for the activity |
-| timebodygyroscopemagnitutestandardeviation | Average standard deviation of the time body gyroscope magnitude signal recorded by the subject for the activity |
-| timebodygyroscopejerkmagnitutemean | Average mean value of the time body gyroscope jerk magnitude signal recorded by the subject for the activity |
-| timebodygyroscopejerkmagnitutestandardeviation | Average standard deviation of the time body gyroscope jerk magnitude signal recorded by the subject for the activity |
-| frequencybodyaccelerationmeanx | Average mean value of the time body motion acceleration signal in X direction recorded by the subject for the activity |
-| frequencybodyaccelerationmeany | Average mean value of the time body motion acceleration signal in Y direction recorded by the subject for the activity |
-| frequencybodyaccelerationmeanz | Average mean value of the time body motion acceleration signal in Z direction recorded by the subject for the activity |
-| frequencybodyaccelerationstandardeviationx | Average standard deviation of the time body motion acceleration signal in X direction recorded by the subject for the activity |
-| frequencybodyaccelerationstandardeviationy | Average standard deviation of the time body motion acceleration signal in Y direction recorded by the subject for the activity |
-| frequencybodyaccelerationstandardeviationz | Average standard deviation of the time body motion acceleration signal in Z direction recorded by the subject for the activity |
+| --- | --- |
+| subject | Identification number of the subject who performed the activity |
+| activity | Activity performed by the subject. The activity labels are listed below. The activity codes from the original dataset are not included in the tidy dataset file but are indicated 
+
+against each label for reference <ul><li> WALKING - 1</li><li> WALKING UPSTAIRS - 2</li><li> WALKING DOWNSTAIRS - 3</li><li> SITTING - 4</li><li> STANDING - 5</li><li> LAYING - 6</li></ul>|
+| timebodyaccelerationmeanx | Average mean value (in Hertz) of the body acceleration signal, from the time domain, in direction X, for the subject & activity |
+| timebodyaccelerationmeany | Average mean value (in Hertz) of the body acceleration signal, from the time domain, in direction Y, for the subject & activity |
+| timebodyaccelerationmeanz | Average mean value (in Hertz) of the body acceleration signal, from the time domain, in direction Z, for the subject & activity |
+| timebodyaccelerationstandardeviationx | Average standard deviation (in Hertz) of the body acceleration signal, from the time domain, in direction X, for the subject & activity |
+| timebodyaccelerationstandardeviationy | Average standard deviation (in Hertz) of the body acceleration signal, from the time domain, in direction Y, for the subject & activity |
+| timebodyaccelerationstandardeviationz | Average standard deviation (in Hertz) of the body acceleration signal, from the time domain, in direction Z, for the subject & activity |
+| timegravityaccelerationmeanx | Average mean value (in Hertz) of the gravity acceleration signal, from the time domain, in direction X, for the subject & activity |
+| timegravityaccelerationmeany | Average mean value (in Hertz) of the gravity acceleration signal, from the time domain, in direction Y, for the subject & activity |
+| timegravityaccelerationmeanz | Average mean value (in Hertz) of the gravity acceleration signal, from the time domain, in direction Z, for the subject & activity |
+| timegravityaccelerationstandardeviationx | Average standard deviation (in Hertz) of the gravity acceleration signal, from the time domain, in direction X, for the subject & activity |
+| timegravityaccelerationstandardeviationy | Average standard deviation (in Hertz) of the gravity acceleration signal, from the time domain, in direction Y, for the subject & activity |
+| timegravityaccelerationstandardeviationz | Average standard deviation (in Hertz) of the gravity acceleration signal, from the time domain, in direction Z, for the subject & activity |
+| timebodyaccelerationjerkmeanx | Average mean value (in Hertz) of the body acceleration jerk signal, from the time domain, in direction X, for the subject & activity |
+| timebodyaccelerationjerkmeany | Average mean value (in Hertz) of the body acceleration jerk signal, from the time domain, in direction Y, for the subject & activity |
+| timebodyaccelerationjerkmeanz | Average mean value (in Hertz) of the body acceleration jerk signal, from the time domain, in direction Z, for the subject & activity |
+| timebodyaccelerationjerkstandardeviationx | Average standard deviation (in Hertz) of the body acceleration jerk signal, from the time domain, in direction X, for the subject & activity |
+| timebodyaccelerationjerkstandardeviationy | Average standard deviation (in Hertz) of the body acceleration jerk signal, from the time domain, in direction Y, for the subject & activity |
+| timebodyaccelerationjerkstandardeviationz | Average standard deviation (in Hertz) of the body acceleration jerk signal, from the time domain, in direction Z, for the subject & activity |
+| timebodygyroscopemeanx | Average mean value (in Hertz) of the body gyroscope signal, from the time domain, in direction X, for the subject & activity |
+| timebodygyroscopemeany | Average mean value (in Hertz) of the body gyroscope signal, from the time domain, in direction Y, for the subject & activity |
+| timebodygyroscopemeanz | Average mean value (in Hertz) of the body gyroscope signal, from the time domain, in direction Z, for the subject & activity |
+| timebodygyroscopestandardeviationx | Average standard deviation (in Hertz) of the body gyroscope signal, from the time domain, in direction X, for the subject & activity |
+| timebodygyroscopestandardeviationy | Average standard deviation (in Hertz) of the body gyroscope signal, from the time domain, in direction Y, for the subject & activity |
+| timebodygyroscopestandardeviationz | Average standard deviation (in Hertz) of the body gyroscope signal, from the time domain, in direction Z, for the subject & activity |
+| timebodygyroscopejerkmeanx | Average mean value (in Hertz) of the body gyroscope jerk signal, from the time domain, in direction X, for the subject & activity |
+| timebodygyroscopejerkmeany | Average mean value (in Hertz) of the body gyroscope jerk signal, from the time domain, in direction Y, for the subject & activity |
+| timebodygyroscopejerkmeanz | Average mean value (in Hertz) of the body gyroscope jerk signal, from the time domain, in direction Z, for the subject & activity |
+| timebodygyroscopejerkstandardeviationx | Average standard deviation (in Hertz) of the body gyroscope jerk signal, from the time domain, in direction X, for the subject & activity |
+| timebodygyroscopejerkstandardeviationy | Average standard deviation (in Hertz) of the body gyroscope jerk signal, from the time domain, in direction Y, for the subject & activity |
+| timebodygyroscopejerkstandardeviationz | Average standard deviation (in Hertz) of the body gyroscope jerk signal, from the time domain, in direction Z, for the subject & activity |
+| timebodyaccelerationmagnitutemean | Average mean value (in Hertz) of the body acceleration signal magnitude, from the time domain, for the subject & activity |
+| timebodyaccelerationmagnitutestandardeviation | Average standard deviation (in Hertz) of the body acceleration signal magnitude, from the time domain, for the subject & activity |
+| timegravityaccelerationmagnitutemean | Average mean value (in Hertz) of the gravity acceleration signal magnitude, from the time domain, for the subject & activity |
+| timegravityaccelerationmagnitutestandardeviation | Average standard deviation (in Hertz) of the gravity acceleration signal magnitude, from the time domain, for the subject & activity |
+| timebodyaccelerationjerkmagnitutemean | Average mean value (in Hertz) of the body acceleration jerk signal magnitude, from the time domain, for the subject & activity |
+| timebodyaccelerationjerkmagnitutestandardeviation | Average standard deviation (in Hertz) of the body acceleration jerk signal magnitude, from the time domain, for the subject & activity |
+| timebodygyroscopemagnitutemean | Average mean value (in Hertz) of the body gyroscope signal magnitude, from the time domain, for the subject & activity |
+| timebodygyroscopemagnitutestandardeviation | Average standard deviation (in Hertz) of the body gyroscope signal magnitude, from the time domain, for the subject & activity |
+| timebodygyroscopejerkmagnitutemean | Average mean value (in Hertz) of the body gyroscope jerk signal magnitude, from the time domain, for the subject & activity |
+| timebodygyroscopejerkmagnitutestandardeviation | Average standard deviation (in Hertz) of the body gyroscope jerk signal magnitude, from the time domain, for the subject & activity |
+| frequencybodyaccelerationmeanx | Average mean value (in Hertz) of the body acceleration signal, from the frequency domain, in direction X, for the subject & activity |
+| frequencybodyaccelerationmeany | Average mean value (in Hertz) of the body acceleration signal, from the frequency domain, in direction Y, for the subject & activity |
+| frequencybodyaccelerationmeanz | Average mean value (in Hertz) of the body acceleration signal, from the frequency domain, in direction Z, for the subject & activity |
+| frequencybodyaccelerationstandardeviationx | Average standard deviation (in Hertz) of the body acceleration signal, from the frequency domain, in direction X, for the subject & activity |
+| frequencybodyaccelerationstandardeviationy | Average standard deviation (in Hertz) of the body acceleration signal, from the frequency domain, in direction Y, for the subject & activity |
+| frequencybodyaccelerationstandardeviationz | Average standard deviation (in Hertz) of the body acceleration signal, from the frequency domain, in direction Z, for the subject & activity |
+| frequencybodyaccelerationjerkmeanx | Average mean value (in Hertz) of the body acceleration jerk signal, from the frequency domain, in direction X, for the subject & activity |
+| frequencybodyaccelerationjerkmeany | Average mean value (in Hertz) of the body acceleration jerk signal, from the frequency domain, in direction Y, for the subject & activity |
+| frequencybodyaccelerationjerkmeanz | Average mean value (in Hertz) of the body acceleration jerk signal, from the frequency domain, in direction Z, for the subject & activity |
+| frequencybodyaccelerationjerkstandardeviationx | Average standard deviation (in Hertz) of the body acceleration jerk signal, from the frequency domain, in direction X, for the subject & activity 
+
+|
+| frequencybodyaccelerationjerkstandardeviationy | Average standard deviation (in Hertz) of the body acceleration jerk signal, from the frequency domain, in direction Y, for the subject & activity 
+
+|
+| frequencybodyaccelerationjerkstandardeviationz | Average standard deviation (in Hertz) of the body acceleration jerk signal, from the frequency domain, in direction Z, for the subject & activity 
+
+|
+| frequencybodygyroscopemeanx | Average mean value (in Hertz) of the body gyroscope signal, from the frequency domain, in direction X, for the subject & activity |
+| frequencybodygyroscopemeany | Average mean value (in Hertz) of the body gyroscope signal, from the frequency domain, in direction Y, for the subject & activity |
+| frequencybodygyroscopemeanz | Average mean value (in Hertz) of the body gyroscope signal, from the frequency domain, in direction Z, for the subject & activity |
+| frequencybodygyroscopestandardeviationx | Average standard deviation (in Hertz) of the body gyroscope signal, from the frequency domain, in direction X, for the subject & activity |
+| frequencybodygyroscopestandardeviationy | Average standard deviation (in Hertz) of the body gyroscope signal, from the frequency domain, in direction Y, for the subject & activity |
+| frequencybodygyroscopestandardeviationz | Average standard deviation (in Hertz) of the body gyroscope signal, from the frequency domain, in direction Z, for the subject & activity |
+| frequencybodyaccelerationmagnitutemean | Average mean value (in Hertz) of the body acceleration signal magnitude, from the frequency domain, for the subject & activity |
+| frequencybodyaccelerationmagnitutestandardeviation | Average standard deviation (in Hertz) of the body acceleration signal magnitude, from the frequency domain, for the subject & activity |
+| frequencybodyaccelerationjerkmagnitutemean | Average mean value (in Hertz) of the body acceleration jerk signal magnitude, from the frequency domain, for the subject & activity |
+| frequencybodyaccelerationjerkmagnitutestandardeviation | Average standard deviation (in Hertz) of the body acceleration jerk signal magnitude, from the frequency domain, for the subject & 
+
+activity |
+| frequencybodygyroscopemagnitutemean | Average mean value (in Hertz) of the body gyroscope signal magnitude, from the frequency domain, for the subject & activity |
+| frequencybodygyroscopemagnitutestandardeviation | Average standard deviation (in Hertz) of the body gyroscope signal magnitude, from the frequency domain, for the subject & activity |
+| frequencybodygyroscopejerkmagnitutemean | Average mean value (in Hertz) of the body gyroscope jerk signal magnitude, from the frequency domain, for the subject & activity |
+| frequencybodygyroscopejerkmagnitutestandardeviation | Average standard deviation (in Hertz) of the body gyroscope jerk signal magnitude, from the frequency domain, for the subject & activity |
