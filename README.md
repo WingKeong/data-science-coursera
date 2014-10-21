@@ -3,6 +3,8 @@ datasciencecoursera
 
 #Repo created for Data Scienctist's Toolkit project
 
+| Variable Name | Description |
+| --- | ---|
 | timebodyaccelerationmeanx | Average mean value of the body motion acceleration signal from the time domain in X direction recorded by the subject for the activity |
 | timebodyaccelerationmeany | Average mean value of the body motion acceleration signal from the time domain in Y direction recorded by the subject for the activity |
 | timebodyaccelerationmeanz | Average mean value of the body motion acceleration signal from the time domain in Z direction recorded by the subject for the activity |
