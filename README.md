@@ -5,12 +5,13 @@ datasciencecoursera
 
 ##Codebook for Tidy dataset.txt
 test
+```{r}
 >#sd
 >selvar<-selvar[,desc:=V2]
 >selvar$desc<-gsub('^t', 'time', selvar$desc) #Expand abbreviations - t to time
 >selvar$desc<-gsub('^f', 'frequency', selvar$desc) #Expand abbreviations - f to frequency
 dsf
-
+```
 
 | Variable Name | Description |
 | --- | --- |
