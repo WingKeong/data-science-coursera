@@ -1,8 +1,6 @@
 datasciencecoursera
 ===================
 
-#Repo created for Data Scienctist's Toolkit project
-
 ##Repository for Getting and Cleaning Data project assignment
 
 ###Overview
@@ -37,9 +35,9 @@ features<-fread("./UCI HAR Dataset/features.txt")
 
 <br/>**Assignment Task 2** - Select mean and standard deviation measures
 
-Since most measure variables needs to be excluded from the final dataset, I decided to perform task 2 (find the mean & std variables) first, so that only these fields gets included when merging the training and test sets together (task 1)
+Since most measure variables are to be excluded from the final dataset, I decided to perform task 2 (find mean & std variables) first, so that only these fields gets included when merging the training and test sets together (task 1)
 
-My interpretation of the task 2 is to select only `mean()` & `std()` measures so I have not included variables like XXX-meanFreq() and angle variables eg. angle(tBodyAccJerkMean),gravityMean)
+My interpretation of task 2 is to select only `mean()` & `std()` measures so I have not included variables like XXX-meanFreq() and angle variables eg. angle(tBodyAccJerkMean),gravityMean)
 ```
 selvar<-subset(features, grepl("mean()", features$V2, fixed=TRUE) | grepl("std()", features$V2, fixed=TRUE))
 ```
@@ -99,7 +97,7 @@ selvar$desc<-tolower(selvar$desc) 					#convert to lowercase
 setnames(combset,3:68,selvar$desc)					#Replace measure variable names(col 3-68) with descriptive name
 ```
 
-<br/>**Assignment Task 5** - Create a new tidy dataset with the averages of each variable for each subject and activity
+<br/>**Assignment Task 5** - Create a new tidy dataset of average measure variable for each subject and activity
 
 Used the .SD parameter to apply the mean function to all columns, except for the group by columns (indicated in the by=)
 ```
@@ -107,76 +105,6 @@ tidyset<-combset[,lapply(.SD, mean), by=list(subject,activity)]
 setorder(tidyset,subject,activity)	#sorts the table by subject and activity
 write.table(tidyset,file = "./tidy dataset.txt",row.names = FALSE)	#Delimitor character is space, same as the original files
 ```
-mean & std variables when merging the training and test sets (task 1)
-
-My interpretation of the task 2 is to select only mean() & std() measures and so I have not included variables like XXX-meanFreq() and angle variables eg. angle(tBodyAccJerkMean),gravityMean)
-```
-selvar<-subset(features, grepl("mean()", features$V2, fixed=TRUE) | grepl("std()", features$V2, fixed=TRUE))
-```
-
-<br/>**Assignment Task 1** - Merge training and test datasets
-
-Read in the training subject `subject_train.txt`, activity `y_train.txt` and measures `X_train.txt` files and create a training data.table with the subject, activity and mean/std variables
-Using fread crashes RStudio so I had to first read the tables as data.frames and then convert them to data.table
-```
-traindata<-read.table("./UCI HAR Dataset/train/X_train.txt")
-trainact<-read.table("./UCI HAR Dataset/train/y_train.txt")
-trainsubj<-read.table("./UCI HAR Dataset/train/subject_train.txt")
-trainset<-data.table(subject=unlist(trainsubj), activity=unlist(trainact), traindata[,selvar$V1])  #Inc Step 2
-```
-
-Do the same thing for the equivalent test datasets
-```
-testdata<-read.table("./UCI HAR Dataset/test/X_test.txt")
-testact<-read.table("./UCI HAR Dataset/test/y_test.txt")
-testsubj<-read.table("./UCI HAR Dataset/test/subject_test.txt")
-testset<-data.table(subject=unlist(testsubj), activity=unlist(testact), testdata[,selvar$V1])
-```
-
-<br/>Combine the training and test data.tables together
-```
-combset<-rbindlist(list(trainset,testset))
-```
-
-<br/>**Assignment Task 3** - Replace activity code with descriptive names
-
-Convert the activity code in the combined table into a factor, using the activity labels from the activity data.table
-```
-combset$activity<-factor(combset$activity,activity$V1, activity$V2)
-```
-
-<br/>**Assignment Task 4** - Label the dataset with descriptive names
-
-I'm applying the rules according to the JL lecture, and expectations set by the TAs in course forums
-- Rule 1 - Expand abbreviations - detailed expansion rules given below
-- Rule 2 - Remove symbols eg. () and -
-- Rule 3 - Convert names to lowercase
-
-Instead of just replacing the columns names in the combined dataset, my approach is to first add a new column to the original variable name table (*selvar* which has already been filtered to retain only means & std variables) to store the longer descriptive name. This allows me to get back the original names easily if ever I needed to.
-
-I then use the longer names to replace the column names in the combined dataset
-```
-selvar<-selvar[,desc:=V2]							#Add a new column for descriptive variable name
-selvar$desc<-gsub('^t', 'time', selvar$desc) 			#Expand abbreviations - names starting with t to time
-selvar$desc<-gsub('^f', 'frequency', selvar$desc) 			#Expand abbreviations - names starting with f to frequency
-selvar$desc<-gsub('Acc', 'acceleration', selvar$desc) 		#Expand abbreviations - Acc to acceleration
-selvar$desc<-gsub('Gyro', 'gyroscope', selvar$desc) 		#Expand abbreviations - Gyro to gyroscope
-selvar$desc<-gsub('Mag', 'magnitute', selvar$desc) 		#Expand abbreviations - Mag  to magnitute
-selvar$desc<-gsub('std', 'standardeviation', selvar$desc) 	#Expand abbreviations - std  to standarddeviation
-selvar$desc<-gsub('BodyBody', 'body', selvar$desc) 		#Fix duplicated BodyBody mistake to body
-selvar$desc<-gsub('-', '', selvar$desc) 				#Remove dash from name
-selvar$desc<-gsub('()', '', selvar$desc, fixed = TRUE) 		#Remove () from name
-selvar$desc<-tolower(selvar$desc) 					#convert to lowercase
-setnames(combset,3:68,selvar$desc)					#Replace measure variable names(col 3-68) with descriptive name
-```
-
-<br/>**Assignment Task 5** - Create a new tidy dataset with the averages of all measure variables for each subject and activity
-
-Used the .SD parameter to apply the mean function to all columns, except the group-by columns (indicated in the by=)
-```
-tidyset<-combset[,lapply(.SD, mean), by=list(subject,activity)]
-setorder(tidyset,subject,activity)	#sorts the table by subject and activity
-write.table(tidyset,file = "./tidy dataset.txt",row.names = FALSE)	#Delimitor character is space, same as the original files
 ```
 
 
