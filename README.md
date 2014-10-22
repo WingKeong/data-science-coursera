@@ -3,6 +3,32 @@ datasciencecoursera
 
 #Repo created for Data Scienctist's Toolkit project
 
+
+##README
+
+###Overview
+The purpose of this project is to assess our ability to collect, work with, and clean a dataset. The assignment deliverables are as follows:
+1. One R script called *run_analysis.R* that collects, tranforms, cleans and creates a tidy dataset
+2. A tidy dataset *"tidy dataset.txt"*, the output of the R script
+3. A codebook called *"codebook.md"* that describes the variables, the data and transformations performed to clean up the data
+4. This *README.md* file to explain the R script
+5. A Github repository to store the R script, codebook and readme file
+
+###run_analysis.R script
+The run_analysis.R script is reproduced below together with explainations of the steps taken
+
+#Load data.table package
+```library(data.table)```
+
+#Download zipfile from url provided to local working directory
+#Extract folders & files from the zipfile to the same sub-directory from the zipfile (/UCI HAR Dataset/ )
+```src_url<-"http://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
+download.file(src_url,destfile = "./Dataset.zip")
+unzip("./Dataset.zip")```
+
+
+
+
 ##Codebook for Tidy_dataset.txt
 
 ###Original Dataset
