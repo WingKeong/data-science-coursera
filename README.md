@@ -22,7 +22,7 @@ Load data.table package
 library(data.table)
 ```
 
-Download zipfile from url provided to local working directory. Extract folders & files from the zipfile to the sub-directory in the zipfile (/UCI HAR Dataset/ )
+<br/>Download zipfile from url provided to local working directory. Extract folders & files from the zipfile to the sub-directory in the zipfile (/UCI HAR Dataset/ )
 ```
 src_url<-"http://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
 download.file(src_url,destfile = "./Dataset.zip")
