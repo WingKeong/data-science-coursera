@@ -30,7 +30,78 @@ download.file(src_url,destfile = "./Dataset.zip")
 unzip("./Dataset.zip")
 ```
 
+Read the activity_labels.txt and features.txt files into activity & features data.tables
+```
+activity<-fread("./UCI HAR Dataset/activity_labels.txt")
+features<-fread("./UCI HAR Dataset/features.txt")
+```
 
+**Assignment Task 2** - Select mean and standard deviation measures
+Since only the mean and standard deviation measures are needed, I decided to perform task 2 (find the mean & std variables) first, so that only these fields will be included when merging the training and test sets together (task 1)
+
+My interpretation of the task 2 is to select only mean() & std() measures and so I have not included variables like XXX-meanFreq() and angle variables eg. angle(tBodyAccJerkMean),gravityMean)
+```
+selvar<-subset(features, grepl("mean()", features$V2, fixed=TRUE) | grepl("std()", features$V2, fixed=TRUE))
+```
+
+**Assignment Task 1** - Merge training and test datasets
+Read in the training subject(subject_train.txt), activity(y_train.txt) and measures(x_train.txt) files and create a training data.table with the subject, activity and mean/std variables
+Using fread crashes RStudio so I had to first read the tables as data.frames and then convert them to data.table
+```
+traindata<-read.table("./UCI HAR Dataset/train/X_train.txt")
+trainact<-read.table("./UCI HAR Dataset/train/y_train.txt")
+trainsubj<-read.table("./UCI HAR Dataset/train/subject_train.txt")
+trainset<-data.table(subject=unlist(trainsubj), activity=unlist(trainact), traindata[,selvar$V1])  #Inc Step 2
+```
+
+Do the same thing for the equivalent test datasets
+```
+testdata<-read.table("./UCI HAR Dataset/test/X_test.txt")
+testact<-read.table("./UCI HAR Dataset/test/y_test.txt")
+testsubj<-read.table("./UCI HAR Dataset/test/subject_test.txt")
+testset<-data.table(subject=unlist(testsubj), activity=unlist(testact), testdata[,selvar$V1])
+```
+
+Combine the training and test data.tables together
+```
+combset<-rbindlist(list(trainset,testset))
+```
+
+**Assignment Task 3** - Replace activity code with descriptive names
+Convert the activity code in the combined table into a factor, using the activity labels from the activity data.table
+```
+combset$activity<-factor(combset$activity,activity$V1, activity$V2)
+```
+
+**Assignment Task 4** - Label the dataset with descriptive names
+I'm applying the rules according to the JL lecture, and expectations set by the TAs in course forums
+- Rule 1 - Expand abbreviations - detailed expansion rules given below
+- Rule 2 - Remove symbols eg. () and -
+- Rule 3 - Convert names to lowercase
+Instead of just replacing the columns names in the combined dataset, my approach is to first add a new column to the original variable name table (*selvar* which has already been filtered to retain only means & std variables) to store the longer descriptive name. This allows me to get back the original names easily if ever I needed to.
+I then use the longer names to replace the column names in the combined dataset
+```
+selvar<-selvar[,desc:=V2]	#Add a new column for the long variable name
+selvar$desc<-gsub('^t', 'time', selvar$desc) #Expand abbreviations - names starting with t to time
+selvar$desc<-gsub('^f', 'frequency', selvar$desc) #Expand abbreviations - names starting with f to frequency
+selvar$desc<-gsub('Acc', 'acceleration', selvar$desc) #Expand abbreviations - Acc to acceleration
+selvar$desc<-gsub('Gyro', 'gyroscope', selvar$desc) #Expand abbreviations - Gyro to gyroscope
+selvar$desc<-gsub('Mag', 'magnitute', selvar$desc) #Expand abbreviations - Mag  to magnitute
+selvar$desc<-gsub('std', 'standardeviation', selvar$desc) #Expand abbreviations - std  to standarddeviation
+selvar$desc<-gsub('BodyBody', 'body', selvar$desc) #Fix duplicated BodyBody mistake to body
+selvar$desc<-gsub('-', '', selvar$desc) #Remove dash from name
+selvar$desc<-gsub('()', '', selvar$desc, fixed = TRUE) #Remove () from name
+selvar$desc<-tolower(selvar$desc) 	#convert to lowercase
+setnames(combset,3:68,selvar$desc)	#Replace measure variable names - columns 3 to 68, with corresponding descriptive names from selvar
+```
+
+**Assignment Task 5** - Create a new tidy dataset with the averages of each variable for each subject and activity
+Used the .SD parameter to apply the mean function to all columns, except for the group by columns (indicated in the by=)
+```
+tidyset<-combset[,lapply(.SD, mean), by=list(subject,activity)]
+setorder(tidyset,subject,activity)	#sorts the table by subject and activity
+write.table(tidyset,file = "./tidy dataset.txt",row.names = FALSE)	#Delimitor character is space, same as the original files
+```
 
 ##Codebook for Tidy_dataset.txt
 
