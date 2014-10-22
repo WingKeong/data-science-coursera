@@ -21,8 +21,8 @@ Load data.table package
 ```
 library(data.table)
 ```
-
-
+<br/>
+<br/>
 Download zipfile from url provided to local working directory
 Extract folders & files from the zipfile to the same sub-directory from the zipfile (/UCI HAR Dataset/ )
 ```
