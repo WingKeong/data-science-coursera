@@ -20,7 +20,11 @@ The original data set contains results of experiments carried by 30 volunteers -
 - 'test/X_test.txt': Measurements of each feature taken from the test data volunteers
 - 'test/y_test.txt': Feature code corresponding to the measurement from the x_test.txt file
 
-This dataset was transformed 
+This dataset was transformed using R script **as.R**  as follows
+- asd
+- asd
+> asd
+>asdsdsd
 
 ###Variables Description
 | Variable Name | Description |
