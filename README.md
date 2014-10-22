@@ -7,7 +7,6 @@ datasciencecoursera
 
 ###Overview
 The purpose of this project is to assess our ability to collect, work with, and clean a dataset. The assignment deliverables are as follows:
-
 1. One R script called *run_analysis.R* that collects, tranforms, cleans and creates a tidy dataset
 2. A tidy dataset *"tidy dataset.txt"*, the output of the R script
 3. A codebook called *"codebook.md"* that describes the variables, the data and transformations performed to clean up the data
@@ -36,7 +35,7 @@ activity<-fread("./UCI HAR Dataset/activity_labels.txt")
 features<-fread("./UCI HAR Dataset/features.txt")
 ```
 
-**Assignment Task 2** - Select mean and standard deviation measures
+**Assignment Task 2** - Select mean and standard deviation measures   
 Since only the mean and standard deviation measures are needed, I decided to perform task 2 (find the mean & std variables) first, so that only these fields will be included when merging the training and test sets together (task 1)
 
 My interpretation of the task 2 is to select only mean() & std() measures and so I have not included variables like XXX-meanFreq() and angle variables eg. angle(tBodyAccJerkMean),gravityMean)
